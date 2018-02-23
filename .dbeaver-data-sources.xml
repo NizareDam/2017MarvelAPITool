@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data-sources>
+	<data-source id="derby-1604b95c190-2161370e5a72ccbf" provider="generic" driver="derby" name="Derby - db" save-password="true" show-system-objects="true" read-only="false">
+		<connection server="" database="C:\Users\Nizare\Desktop\test\2017PInfo84-AhLouNi\db" url="jdbc:derby:C:\Users\Nizare\Desktop\test\2017PInfo84-AhLouNi\db" type="dev"/>
+	</data-source>
+	<filters/>
+</data-sources>

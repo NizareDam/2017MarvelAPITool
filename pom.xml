@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>TSE</groupId>
+  <artifactId>2017PInfo84-AhLouNi</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  
+	<!-- Output to jar format -->
+	<packaging>jar</packaging>
+  
+<repositories>
+    <repository>
+        <id>maven2.gueck.com-releases</id>
+        <url>http://maven2.gueck.com/releases</url>
+    </repository>
+</repositories>
+  <name>2017PInfo84-AhLouNi</name>
+  <url>http://maven.apache.org</url>
+<properties>
+<log4j.version>1.2.17</log4j.version>
+		<jdk.version>1.7</jdk.version>
+		<jodatime.version>2.5</jodatime.version>
+		<junit.version>4.11</junit.version>
+    <slf4jVersion>1.7.10</slf4jVersion>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <apacheCommonsCompressVersion>1.9</apacheCommonsCompressVersion>
+    <wikidataToolkitVersion>0.7.0</wikidataToolkitVersion>
+  </properties>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+     <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>${jodatime.version}</version>
+		</dependency>
+<dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>fluent-hc</artifactId>
+            <version>4.3.3</version>
+        </dependency>
+			<dependency>
+    <groupId>commons-codec</groupId>
+    <artifactId>commons-codec</artifactId>
+    <version>1.9</version>
+			</dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+            <version>2.3.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.2.1</version>
+        </dependency>
+        <dependency>
+    		<groupId>org.slf4j</groupId>
+    		<artifactId>slf4j-api</artifactId>
+    		<version>1.8.0-beta0</version>
+		</dependency>
+ 			 <dependency>
+        <groupId>mikaelhg</groupId>
+        <artifactId>urlbuilder</artifactId>
+        <version>1.3.2</version>
+    </dependency>
+		<dependency>
+    		<groupId>com.google.guava</groupId>
+    		<artifactId>guava</artifactId>
+    		<version>r05</version>
+		</dependency>
+	
+    <dependency>
+      <groupId>org.wikidata.wdtk</groupId>
+      <artifactId>wdtk-dumpfiles</artifactId>
+      <version>${wikidataToolkitVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.wikidata.wdtk</groupId>
+      <artifactId>wdtk-rdf</artifactId>
+      <version>${wikidataToolkitVersion}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.wikidata.wdtk</groupId>
+      <artifactId>wdtk-wikibaseapi</artifactId>
+      <version>${wikidataToolkitVersion}</version>
+    </dependency>
+   <dependency>
+	  <groupId>org.apache.commons</groupId>
+	  <artifactId>commons-compress</artifactId>
+	  <version>${apacheCommonsCompressVersion}</version>
+    </dependency>
+	<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+	 <dependency> 
+      <groupId>org.slf4j</groupId>
+	  <artifactId>slf4j-log4j12</artifactId>
+	  <version>1.7.10</version>
+	</dependency>
+	<!-- https://mvnrepository.com/artifact/org.apache.derby/derby -->
+  <dependency>
+      <groupId>org.apache.derby</groupId>
+      <artifactId>derby</artifactId>
+      <version>10.8.3.0</version>
+    </dependency>
+	<dependency>
+    <groupId>org.apache.derby</groupId>
+    <artifactId>derbyclient</artifactId>
+    <version>10.10.1.1</version>
+</dependency>
+<dependency>
+    <groupId>org.wikidata.wdtk</groupId>
+    <artifactId>wdtk-util</artifactId>
+    <version>0.8.0</version>
+</dependency>
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-api</artifactId>
+    <version>1.8.0-alpha2</version>
+</dependency>
+
+<dependency>
+    <groupId>com.fifesoft</groupId>
+    <artifactId>autocomplete</artifactId>
+    <version>1.5.0</version>
+</dependency>
+
+  </dependencies>
+ 
+
+	
+	<build>
+	<finalName>ComicTool</finalName>
+    <plugins>
+      <plugin>
+   <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-shade-plugin</artifactId>
+    <version>3.1.0</version>
+       <configuration>
+					<source>${jdk.version}</source>
+					<target>${jdk.version}</target>
+		</configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                 <!-- Jar file entry point -->
+						<mainClass>fr.tse.fise2.ahlouni.graphicinterface.Interface</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
